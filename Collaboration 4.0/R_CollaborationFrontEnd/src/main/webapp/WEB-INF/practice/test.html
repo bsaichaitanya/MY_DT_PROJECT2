@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+<body>
+
+
+<!-- using ng-init -->
+<!-- <div ng-app="" ng-init="firstName='roopesh'; lastName='unnamatla'">
+<h1>{{firstName+" "+lastName}}</h1>  -->
+
+
+<!--  using ng-model and ng-bind-->
+<!-- <div ng-app="">
+<input type="text"   ng-model="firstName">
+<p ng-bind="firstName"></p>  -->
+
+
+
+<!-- using ng-model and expression -->
+<!-- <div ng-app="">
+<input type="text"   ng-model="firstName">
+<p >{{firstName}}</p>  -->
+
+
+
+<!-- using ng-init with object -->
+<!-- <div ng-app="" ng-init="person={firstName:'roopesh', lastName:'unnamatla'}">
+<h1>{{person.lastName}}</h1>  
+<p ng-bind="person.firstName"></p> -->
+
+
+
+
+<!--using module and controller  -->
+<!-- <div ng-app="myPrac" ng-controller="myPracCtrl">
+<p ng-bind="firstName+' '+lastName"></p>
+<script>
+var app=angular.module("myPrac",[]);
+app.controller("myPracCtrl",function($scope){
+$scope.firstName="roopesh";
+$scope.lastName="unnamatla";	
+})
+</script> -->
+
+
+
+
+<!--  using ng-repeat-->
+ <!--  <div ng-app="" ng-init="Names=['roopesh','unnamtla','varsh']">
+  <ul>
+  <li ng-repeat="x in Names">{{x}}</li>
+</ul> -->
+
+
+
+<!-- using ng-repeat for objects  -->
+<!-- <div ng-app="" ng-init="Names=[{name:'roopesh'},{Name:'varsh'}]">
+  <ul>
+  <li ng-repeat="x in Names">{{x.Name+x.name}}</li>
+</ul> -->
+
+
+
+<!--  creating my own directive-->
+<!--  <div ng-app="myApp">
+<p roopesh></p>   as attribute
+<script>
+var app=angular.module("myApp",[]);
+app.directive("roopesh",function(){
+return {
+template: "<h1>created by me</h1>"
+};
+});
+</script>  -->
+
+
+<!--  creating my own directive-->
+<!--  <div ng-app="myApp">
+<roopesh></roopesh>
+<script>
+var app=angular.module("myApp",[]);
+app.directive("roopesh",function(){
+return {
+template: "<h1>created by me</h1>"
+};
+});
+</script> -->
+
+
+
+<div ng-app="myApp">
+<roopesh></roopesh> <!-- as element name "E"-->
+<p roopesh></p> <!-- as attribute "A" -->
+<p class="roopesh"></p> <!-- as class  "C"  -->
+<!--directive: roopesh  "M"-->
+<!-- By default the value is EA , hence both can invoke the directive  -->
+<script>
+var app=angular.module("myApp",[]);
+app.directive("roopesh",function(){
+return {
+	restrict:"A" ,
+template: "<h1>created by me</h1>"
+};
+});
+</script> 
+</div>
+
+
+</body>
+</html>
